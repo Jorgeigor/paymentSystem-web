@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fonte */
+  --font-sans: "Inter", ui-sans-serif, system-ui;
+
+  /* Escala de Cinzas (Baseada no Dashboard da Lovable) */
+  --color-gray-50: #F8FAFC;  /* Fundo da tela (Light gray/white) */
+  --color-gray-100: #E2E8F0; /* Bordas e divisores */
+  --color-gray-200: #4d5c57;
+  --color-gray-300: #cdd5d2;
+  --color-gray-400: #64748B; /* Textos secundários (ex: "Send money to...") */
+  --color-gray-800: #1E293B; /* Texto principal e títulos */
+  --color-gray-900: #0F172A; /* Fundo da Sidebar e Card de Saldo */
+
+  /* Identidade PayFlow (O verde que você escolheu) */
+  --color-green-100: #1f8459;
+  --color-green-200: #2cb178;
+  --color-green-300: #e4ece9;
+  --color-green-500: #22C55E; /* Verde principal do logo e valores positivos */
+  --color-green-600: #16A34A; /* Verde para hover ou estados de foco */
+  --color-border-gray: #E2E5EB;
+  /* Alerta para valores negativos */
+  --color-red-500: #EF4444;
+
+  --color-sidebar: #151A23;
+  --color-sidebar-hover: #212A38;
+  --color-sidebar-accent: #1D2E28;
+  --color-green-primary: #21B567;
+  /* Tamanhos de fonte customizados */
+  --text-xxs: 0.625rem;
+  --text-balance: 1.75rem; /* Tamanho para o R$ 24.782,50 */
+}
