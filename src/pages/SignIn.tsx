@@ -37,7 +37,7 @@ export function SignIn(){
     }
     return(
         <div className="h-screen bg-green-300 flex items-center justify-center">
-            <div className="h-[520px] w-[460px] flex flex-col items-center gap-4 rounded-lg bg-white p-10">
+            <div className="h-130 w-115 flex flex-col items-center gap-4 rounded-lg bg-white p-10">
                 <img src={Logotype} alt="Logotipo"  className='my-8'/>
                 <form action={formAction} className='w-full flex flex-col gap-4'>
                     <Input name="email" legend="Email" placeholder='Digite seu email' type="email"/>
