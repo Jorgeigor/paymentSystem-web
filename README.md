@@ -1,73 +1,77 @@
-# React + TypeScript + Vite
+# 💳 Payment System - Web Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive, and highly interactive web application built to consume the Payment System API (based on the PicPay backend challenge). This Single Page Application (SPA) allows users to manage their digital wallets, transfer money, make deposits, and track their transaction history in real-time.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Authentication System:** Secure login and registration flows with real-time input validation and masking (CPF formatting).
+- **Interactive Dashboard:** A clean, intuitive interface displaying current balances and quick actions.
+- **Real-Time Transactions:** - **Transfers:** Send money to any user instantly using their CPF.
+  - **Deposits:** Add balance to your own account (Individual Clients/PF only).
+- **Dynamic Statement:** A transaction history panel that updates automatically in the background (without page reloads) whenever a new transaction is completed.
+- **Elegant UX/UI:** - Non-blocking toast notifications for success and error feedbacks.
+  - Loading states to prevent double-submissions.
+  - Centralized Modal management for a seamless overlay experience.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework:** [React](https://reactjs.org/) with [Vite](https://vitejs.dev/)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **State Management:** React Context API (`AuthContext`, `ModalContext`)
+- **HTTP Client:** [Axios](https://axios-http.com/)
+- **Schema Validation:** [Zod](https://zod.dev/)
+- **UI Components:** - [React Icons](https://react-icons.github.io/react-icons/)
+  - [React Hot Toast](https://react-hot-toast.com/) (Notifications)
 
-## Expanding the ESLint configuration
+## 🏗️ Architecture & Technical Highlights
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Custom Events for Reactivity:** Implemented a `transactionSuccess` browser event pattern to decouple components. Modals can trigger background refreshes on the Dashboard's transaction table without complex prop-drilling.
+- **Clean Form Validation:** Integrated Zod schemas decoupled from the UI, ensuring data integrity (e.g., exact 11-digit CPF validation) before hitting the API.
+- **Context-Driven UI:** Used a global `ModalContext` to manage the visibility of various overlays (Transfer, Add Money) cleanly from anywhere in the component tree.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Jorgeigor/paymentSystem-web.git
+2. Navigate to the project directory:
+```bash
+    cd paymentSystem-web
 ```
+4. Install the dependencies:
+```bash
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+npm install
 ```
+5. Configure the Environment Variables:
+Create a .env file in the root directory and set your API URL (if different from the default):
+```bash
+
+VITE_API_URL=http://localhost:8080
+```
+6. Start the development server:
+```bash
+npm run dev
+```
+## 📂 Project Structure
+```bash
+src/
+├── assets/         # Static files (images, logos)
+├── components/     # Reusable UI components (Buttons, Inputs, Modals, Cards)
+├── contexts/       # Global states (AuthContext, ModalContext)
+├── hooks/          # Custom React hooks (useAuth, useModals)
+├── pages/          # Application routes (SignIn, SignUp, Dashboard)
+├── service/        # API configuration (Axios instances)
+├── utils/          # Helper functions (currency formatting, class merging)
+└── App.tsx         # Main application root
+```
+## 👤 Author
+Developed by Jorge Igor Gomes
+
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/jorge-igor-gomes/)](https://www.linkedin.com/in/jorge-igor-gomes/)
