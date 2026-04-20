@@ -29,5 +29,5 @@
   --color-green-primary: #21B567;
   /* Tamanhos de fonte customizados */
   --text-xxs: 0.625rem;
-  --text-balance: 1.75rem; /* Tamanho para o R$ 24.782,50 */
+  --text-amount: 1.75rem; /* Tamanho para o R$ 24.782,50 */
 }
