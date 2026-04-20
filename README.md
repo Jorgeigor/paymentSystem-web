@@ -13,6 +13,27 @@ A modern, responsive, and highly interactive web application built to consume th
   - Loading states to prevent double-submissions.
   - Centralized Modal management for a seamless overlay experience.
 
+## 📸 Screenshots
+
+<table>
+  <tr>
+    <td>SignIn</td>
+    <td>Signup</td>
+  </tr>
+  <tr>
+    <td><img src="../paymentSystem-web/screenshots/signIn.png" width="400"></td>
+    <td><img src="../paymentSystem-web/screenshots/signUp.png" width="400"></td>
+  </tr>
+  <tr>
+    <td>Dashboard</td>
+    <td>Transaction</td>
+  </tr>
+  <tr>
+    <td><img src="../paymentSystem-web/screenshots/dashboard.png" width="400"></td>
+    <td><img src="../paymentSystem-web/screenshots/transaction.png" width="400"></td>
+  </tr>
+</table>
+
 ## 🛠️ Tech Stack
 
 - **Framework:** [React](https://reactjs.org/) with [Vite](https://vitejs.dev/)
